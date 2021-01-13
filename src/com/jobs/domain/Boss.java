@@ -14,6 +14,7 @@ public class Boss extends AbsStaffMember {
 		super(name, address, phone);		
 		if(salaryPerMonth<0) throw new Exception();
 		if(paymentRate==null) throw new Exception();
+		if(salaryPerMonth*1.5<8000) throw new Exception("Boss can't earn less than 8000");
 				
 		this.salaryPerMonth=salaryPerMonth;
 		this.paymentRate=paymentRate;

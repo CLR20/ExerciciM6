@@ -11,7 +11,9 @@ public class Manager extends AbsStaffMember {
 		super(name, address, phone);		
 		if(salaryPerMonth<0) throw new Exception();
 		if(paymentRate==null) throw new Exception();
-				
+		if(salaryPerMonth*1.1>5000.0) throw new Exception("Manager can't earn more than 5000");
+		if(salaryPerMonth*1.1<3000) throw new Exception("Manager can't earn less than 3000");
+						
 		this.salaryPerMonth=salaryPerMonth;
 		this.paymentRate=paymentRate;
 		role = "Manager";
@@ -21,7 +23,7 @@ public class Manager extends AbsStaffMember {
 	
 	@Override
 	public void pay() {
-		totalPaid=paymentRate.pay(salaryPerMonth);
+		totalPaid=paymentRate.pay(salaryPerMonth);		
 	}
 	
 	@Override

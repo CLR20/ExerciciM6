@@ -11,12 +11,14 @@ public class Main {
 		String allEmployees = "";
 		
 		
-		controller.createBossEmployee("Pepe Boss", "Dirección molona", "666666666", 100.0);
-		controller.createEmployee("Pedro Employee", "Dirección molona 2", "665266666", 40.0);
-		controller.createEmployee("Laura Employee", "Dirección molona 3", "625266666", 45.0);
+		controller.createBoss("Pepe Boss", "Dirección molona", "666666666", 8000.0);
+		controller.createEmployee("Pedro Employee", "Dirección molona 2", "665266666", 3500.0);
+		controller.createEmployee("Laura Employee", "Dirección molona 3", "625266666", 4500.0);
 		controller.createVolunteer("Juan Volunteer", "Dirección molona 4", "614266666");
-		controller.createManagerEmployee("Pedro Employee", "Dirección molona 2", "665226666", 80.0);
-		
+		controller.createManager("Pedro Employee", "Dirección molona 2", "665226666", 4000.0);
+		controller.createSenior("Anna Senior", "Dirección molona 3", "625266666", 3500.0);
+		controller.createMid("Marc Mid", "Dirección molona 3", "625266666", 2500.0);
+		controller.createJunior("Montse Junior", "Dirección molona 3", "625266666", 200.0);
 		
 		controller.payAllEmployeers();
 				
