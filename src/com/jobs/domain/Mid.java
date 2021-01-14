@@ -13,6 +13,7 @@ public class Mid extends Employee {
 		this.paymentRate=paymentRate;
 		role = "Mid employee";
 		rate = 0.80;
+		irpf = "15%";
 	}
 	
 }

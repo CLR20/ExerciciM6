@@ -13,6 +13,7 @@ public class Junior extends Employee {
 		this.paymentRate=paymentRate;
 		role = "Junior employee";
 		rate = 0.85;
+		irpf = "2%";
 	}
 	
 }

@@ -2,11 +2,6 @@ package com.jobs.domain;
 
 public class Employee extends AbsStaffMember {
 
-	protected double salaryPerMonth;
-	protected IPaymentRate paymentRate;	
-	protected String role;
-	protected double rate;
-
 	public Employee(String name, String address, String phone, double salaryPerMonth,IPaymentRate paymentRate) throws Exception {
 		super(name, address, phone);		
 		if(salaryPerMonth<0) throw new Exception();
@@ -25,10 +20,32 @@ public class Employee extends AbsStaffMember {
 	}
 	
 	@Override
+	public void netPay() {
+		net = paymentRate.netPay(totalPaid);
+	}
+	
+	@Override
+	public void yearGross() {
+		yGross = paymentRate.yearGross(totalPaid);
+	}
+	
+	@Override
+	public void yearNet() {
+		yNet = paymentRate.yearNet(net);
+	}
+	
+	@Override
+	public void bonus() {
+		bonus = yNet * 0.1;
+	}
+	
+	@Override
 	public String toString() {
-		return "[Role: " + role + "; Name: " + name + "; Id: " + id + "; Address: " + address + 
-				"; Phone: " + phone + "; Salary: " + salaryPerMonth + "; Payment rate: " + rate + 
-				"; Total payment: " + totalPaid + "]\n";
+		return "**Role: " + role + "; Name: " + name + "; Id: " + id + "; Address: " + address + 
+				"; Phone: " + phone + "; Base salary:" + salaryPerMonth + "; Payment rate: " + 
+				rate + ";\n  Gross month salary: " + totalPaid + "; IRPF: " + irpf + 
+				"; Net month salary: " + net + "\n" + "  Gross year salary: " + yGross + 
+				"; Net year salary: " + yNet + "; 10% bonus: " + bonus + "\n";
 	}
 
 }

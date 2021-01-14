@@ -15,6 +15,7 @@ public class Senior extends Employee {
 		this.paymentRate=paymentRate;
 		role = "Senior employee";
 		rate = 0.95;
+		irpf = "24";
 	}
 	
 }

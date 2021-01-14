@@ -6,7 +6,17 @@ public abstract class AbsStaffMember {
 	protected String name;
 	protected String address;
 	protected String phone;
+	protected double salaryPerMonth;
+	protected IPaymentRate paymentRate;
 	protected double totalPaid=0;
+	protected String role;
+	protected double rate;
+	protected double net;
+	protected String irpf;
+	protected double yGross;
+	protected double yNet;
+	protected double months = 12;
+	protected double bonus;
 
 	private static int COUNTER_MEMBERS = 1;
 
@@ -27,4 +37,11 @@ public abstract class AbsStaffMember {
 
 	public abstract void pay();
 	
+	public abstract void netPay();
+	
+	public abstract void yearGross();
+	
+	public abstract void yearNet();
+	
+	public abstract void bonus();
 }
